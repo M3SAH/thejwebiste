@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Capabilities | Jarecha Investments Limited</title>
+  <meta name="description" content="Explore the comprehensive services of Jarecha Investments: Technology & Digital, Industrial Electrical & Solar, Smart Security, and Corporate Procurement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- Header Navigation -->
+  <header class="navbar scrolled" id="main-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span>JARECHA</span>
+        <span class="brand-dot"></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Jarecha</a></li>
+          <li><a href="index.html#industries" class="nav-link">Industries</a></li>
+          <li><a href="index.html#clients" class="nav-link">Clients</a></li>
+          <li><a href="index.html#compliance" class="nav-link">Compliance</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn">
+          <span>Get in Touch</span>
+          <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg style="width:20px;height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Jarecha</a>
+    <a href="services.html">Services & Capabilities</a>
+    <a href="index.html#why-us">Why Jarecha</a>
+    <a href="index.html#industries">Sectors & Industries</a>
+    <a href="index.html#clients">Client Portfolio</a>
+    <a href="index.html#compliance">Statutory Compliance</a>
+    <a href="contact.html">Contact & Consultations</a>
+  </div>
+
+  <main style="padding-top: 5rem;">
+    <!-- Hero Banner -->
+    <section class="section-padding bg-black" style="padding-top: 6rem; padding-bottom: 5rem;">
+      <div class="container">
+        <div class="badge badge-yellow">
+          <span class="badge-dot"></span>
+          <span>Capability Matrix</span>
+        </div>
+        <h1 class="heading-display text-white">
+          FOUR INTEGRATED<br />
+          <span class="text-yellow">OPERATIONAL DIVISIONS.</span>
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--muted); max-width: 720px; line-height: 1.6;">
+          End-to-end multi-disciplinary solutions engineered to commercial standards across Zambia. Click any service below to inspect full specifications.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIVISION 01 (NAVY) -->
+    <section id="tech" class="section-padding bg-navy">
+      <div class="container">
+        <div class="service-group-row">
+          <div>
+            <div class="service-group-num">01</div>
+            <h2 class="service-group-title">Technology & Digital Systems</h2>
+            <p class="service-group-desc">
+              High-bandwidth structured fiber cabling, enterprise server room architecture, virtualization, software platforms, and managed SLAs.
+            </p>
+            <div class="service-items-list">
+              <div class="service-item-row" data-service="enterprise-networking">
+                <span class="service-item-name">Enterprise Networking & Fiber Optic Cabling</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="data-center">
+                <span class="service-item-name">Data Center & Server Infrastructure</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="custom-software">
+                <span class="service-item-name">Custom Software & Web Platforms</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="it-managed-support">
+                <span class="service-item-name">Managed IT Support & Enterprise SLA</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-img-wrapper">
+            <img src="images/tech-digital.jpg" alt="Technology and Digital Systems" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISION 02 (LIGHT) -->
+    <section id="engineering" class="section-padding bg-light">
+      <div class="container">
+        <div class="service-group-row reverse">
+          <div>
+            <div class="service-group-num" style="color:var(--navy);">02</div>
+            <h2 class="service-group-title" style="color:var(--navy);">Engineering & Infrastructure</h2>
+            <p class="service-group-desc" style="color:rgba(7,26,47,0.75);">
+              EIZ-certified heavy industrial power distribution, commercial solar backup arrays with LiFePO4 storage, and precision civil telecommunications works.
+            </p>
+            <div class="service-items-list">
+              <div class="service-item-row" data-service="electrical-power" style="background:#ffffff;border:1px solid var(--card-border-light);">
+                <span class="service-item-name" style="color:var(--navy);">Commercial & Industrial Electrical Power</span>
+                <span class="service-item-arrow" style="color:var(--navy);">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="solar-energy" style="background:#ffffff;border:1px solid var(--card-border-light);">
+                <span class="service-item-name" style="color:var(--navy);">Commercial Solar & Backup Microgrids</span>
+                <span class="service-item-arrow" style="color:var(--navy);">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="civil-telecom" style="background:#ffffff;border:1px solid var(--card-border-light);">
+                <span class="service-item-name" style="color:var(--navy);">Civil & Telecommunications Tower Works</span>
+                <span class="service-item-arrow" style="color:var(--navy);">View Scope →</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-img-wrapper">
+            <img src="images/engineering.jpg" alt="Engineering and Infrastructure" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISION 03 (NAVY) -->
+    <section id="security" class="section-padding bg-navy">
+      <div class="container">
+        <div class="service-group-row">
+          <div>
+            <div class="service-group-num">03</div>
+            <h2 class="service-group-title">Security & Smart Office</h2>
+            <p class="service-group-desc">
+              AI optical surveillance with automated license plate recognition, biometric smart turnstiles, clean-agent FM-200 fire suppression, and building automation.
+            </p>
+            <div class="service-items-list">
+              <div class="service-item-row" data-service="cctv-surveillance">
+                <span class="service-item-name">IP CCTV Surveillance & AI Analytics</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="access-control">
+                <span class="service-item-name">Biometric Access Control & Time Attendance</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="fire-detection">
+                <span class="service-item-name">Fire Detection & FM-200 Gas Suppression</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-img-wrapper">
+            <img src="images/security.jpg" alt="Security and Smart Office" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVISION 04 (BLACK) -->
+    <section id="business" class="section-padding bg-black">
+      <div class="container">
+        <div class="service-group-row reverse">
+          <div>
+            <div class="service-group-num">04</div>
+            <h2 class="service-group-title">Business & Capacity Building</h2>
+            <p class="service-group-desc">
+              ZPPA-compliant direct institutional sourcing of OEM server hardware, PPE, electrical parts, and customized professional workforce training.
+            </p>
+            <div class="service-items-list">
+              <div class="service-item-row" data-service="corporate-procurement">
+                <span class="service-item-name">Corporate Hardware & Equipment Procurement</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+              <div class="service-item-row" data-service="corporate-training">
+                <span class="service-item-name">IT & Engineering Staff Capacity Building</span>
+                <span class="service-item-arrow">View Scope →</span>
+              </div>
+            </div>
+          </div>
+          <div class="service-img-wrapper">
+            <img src="images/business.jpg" alt="Business and Capacity Building" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Service Detail Modal -->
+  <div id="service-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Close modal">
+        <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div id="modal-category" style="display:inline-block;padding:0.25rem 0.75rem;background:rgba(13,41,69,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:4px;font-size:0.6875rem;font-family:monospace;color:var(--yellow);text-transform:uppercase;margin-bottom:1rem;">
+        Service Division
+      </div>
+
+      <h3 id="modal-title" style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#ffffff;margin-bottom:1rem;">
+        Service Title
+      </h3>
+
+      <p id="modal-desc" style="font-size:0.95rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem;">
+        Detailed technical description of this service offering.
+      </p>
+
+      <div style="font-size:0.75rem;text-transform:uppercase;font-family:monospace;color:rgba(255,255,255,0.7);font-weight:700;margin-bottom:0.75rem;">
+        Key Scope & Technical Capabilities
+      </div>
+      <div id="modal-caps" class="modal-capabilities"></div>
+
+      <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;">
+        <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:0.65rem 1.25rem;">
+          <span>WhatsApp Inquire</span>
+        </a>
+
+        <a href="contact.html" class="btn btn-secondary" style="padding:0.65rem 1.25rem;">
+          <span>Open Consultation Form →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Jarecha Investments Limited. All Rights Reserved. Republic of Zambia.</div>
+        <a href="index.html" style="color:var(--yellow);font-weight:700;">Back to Home →</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PERSISTENT FLOATING WHATSAPP CTA -->
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/260977325804?text=Hello%20Jarecha%20Investments,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-btn-desktop" aria-label="Direct WhatsApp Contact">
+      <span class="whatsapp-pulse"></span>
+      <svg style="width:30px;height:30px;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <div class="whatsapp-tooltip">
+      <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;color:var(--yellow);font-weight:700;text-transform:uppercase;font-size:0.6875rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#25D366;"></span>
+        <span>WhatsApp Live Line</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:0.5rem;font-size:0.75rem;">
+        Chat directly with Jarecha technical management for immediate project consultations.
+      </p>
+      <a href="https://wa.me/260977325804?text=Hello%20Jarecha%20Investments,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:700;display:inline-flex;align-items:center;gap:0.3rem;">
+        <span>Start WhatsApp Chat →</span>
+      </a>
+    </div>
+
+    <a href="https://wa.me/260977325804?text=Hello%20Jarecha%20Investments,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-btn-mobile" aria-label="WhatsApp Jarecha">
+      <div class="whatsapp-badge">
+        <svg style="width:14px;height:14px;color:#ffffff;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <div class="whatsapp-tooltip">
+      <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;color:var(--yellow);font-weight:700;text-transform:uppercase;font-size:0.6875rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#25D366;"></span>
+        <span>WhatsApp Live Line</span>
+      </div>
+      <p style="color:var(--muted);margin-bottom:0.5rem;font-size:0.75rem;">
+        Chat directly with Jarecha technical management for immediate project consultations.
+      </p>
+      <a href="https://wa.me/260977325804?text=Hello%20Jarecha%20Investments,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:700;display:inline-flex;align-items:center;gap:0.3rem;">
+        <span>Start WhatsApp Chat →</span>
+      </a>
+    </div>
+
+    <a href="https://wa.me/260977325804?text=Hello%20Jarecha%20Investments,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-btn-mobile" aria-label="WhatsApp Jarecha">
+      <div class="whatsapp-badge">
+        <svg style="width:14px;height:14px;color:#ffffff;" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z" />
+      </svg>
+    </div>
+    <span>Chat on WhatsApp</span>
+  </a>
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
