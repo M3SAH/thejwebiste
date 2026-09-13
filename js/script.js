@@ -262,12 +262,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = document.getElementById('modal-close');
   const modalInquireBtn = document.getElementById('modal-inquire-btn');
   const modalWhatsappBtn = document.getElementById('modal-whatsapp-btn');
+  const modalImg = document.getElementById('modal-img');
 
   // Service database dictionary for modal
   const serviceDetails = {
     "enterprise-networking": {
       category: "01 — Technology & Digital",
       title: "Enterprise Networking & Fiber",
+      img: "images/laptops-and-accessories.png",
+      imgAlt: "Jarecha Investments Ltd ICT enterprise networking, laptops, and accessories",
       desc: "Comprehensive structured cabling (Cat6/Cat6A), single-mode & multi-mode optical fiber splicing, enterprise rack installations, switch/router provisioning, and corporate Wi-Fi mesh coverage.",
       caps: [
         "Cat6/Cat6A Structured Cabling",
@@ -281,6 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "data-center": {
       category: "01 — Technology & Digital",
       title: "Data Center & Server Infrastructure",
+      img: "images/laptops-and-accessories.png",
+      imgAlt: "Jarecha Investments Ltd data center servers, laptops, and infrastructure",
       desc: "Turnkey server room construction, precision climate control, dual-redundant UPS systems, rack mount chassis, server virtualization (VMware/Hyper-V), and enterprise cloud hybrid integrations.",
       caps: [
         "Tier II/III Architecture Standards",
@@ -294,6 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "custom-software": {
       category: "01 — Technology & Digital",
       title: "Custom Software & Web Platforms",
+      img: "images/laptops-and-accessories.png",
+      imgAlt: "Jarecha Investments Ltd digital systems, laptops, and workstation software",
       desc: "Bespoke corporate management systems, ERP custom modules, patient management records, secure client portals, high-performance web applications, and API integration with regional payment gateways.",
       caps: [
         "Modern Full-Stack Applications",
@@ -307,6 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "it-managed-support": {
       category: "01 — Technology & Digital",
       title: "Managed IT Support & SLA",
+      img: "images/laptops-and-accessories.png",
+      imgAlt: "Jarecha Investments Ltd managed IT support, laptops, and peripherals",
       desc: "Guaranteed uptime agreements, 24/7 helpdesk ticketing, remote infrastructure monitoring, periodic preventive maintenance cycles, and corporate hardware lifecycle asset replenishment.",
       caps: [
         "Rapid Critical Response SLAs",
@@ -320,6 +329,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "electrical-power": {
       category: "02 — Engineering & Infrastructure",
       title: "Commercial & Industrial Electrical",
+      img: "images/solar-system.png",
+      imgAlt: "Jarecha Investments Ltd industrial power and solar energy engineering",
       desc: "EIZ-certified heavy 3-phase industrial power installations, transformer sub-stations, motor control centers (MCC), panel fabrication, power factor correction, and surge suppression.",
       caps: [
         "3-Phase Heavy Distribution",
@@ -333,6 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "solar-energy": {
       category: "02 — Engineering & Infrastructure",
       title: "Commercial Solar & Backup Microgrids",
+      img: "images/solar-system.png",
+      imgAlt: "Jarecha Investments Ltd solar energy system arrays and backup storage",
       desc: "Grid-tied, hybrid, and off-grid high-capacity commercial solar systems, lithium iron phosphate (LiFePO4) storage banks, smart inverters, and automated generator sync panels.",
       caps: [
         "Commercial Roof & Ground Arrays",
@@ -346,6 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "civil-telecom": {
       category: "02 — Engineering & Infrastructure",
       title: "Civil & Telecommunications Works",
+      img: "images/solar-system.png",
+      imgAlt: "Jarecha Investments Ltd civil engineering and solar infrastructure",
       desc: "Telecom tower foundation casting, mast erection, shelter civil works, cable trenching, directional drilling, equipment pad construction, and perimeter site fencing.",
       caps: [
         "Lattice & Monopole Towers",
@@ -359,6 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "cctv-surveillance": {
       category: "03 — Security & Smart Office",
       title: "IP CCTV Surveillance & AI Analytics",
+      img: "images/network-cameras.png",
+      imgAlt: "Jarecha Investments Ltd IP network cameras and CCTV surveillance",
       desc: "High-definition 4K optical & thermal cameras, automated license plate recognition (ALPR), facial detection analytics, enterprise Network Video Recorders (NVR), and remote command center setup.",
       caps: [
         "4K Low-light & Starlight Optics",
@@ -372,6 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "access-control": {
       category: "03 — Security & Smart Office",
       title: "Biometric Access & Time Attendance",
+      img: "images/network-cameras.png",
+      imgAlt: "Jarecha Investments Ltd biometric access and network camera security",
       desc: "Facial recognition terminals, optical fingerprint sensors, RFID smart card turnstiles, electromagnetic locks, time & attendance software integration with Zambian payroll systems.",
       caps: [
         "Contactless Face Terminals",
@@ -385,6 +404,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "fire-detection": {
       category: "03 — Security & Smart Office",
       title: "Fire Detection & Smart Automation",
+      img: "images/office-furniture.jpeg",
+      imgAlt: "Jarecha Investments Ltd smart office automation, executive office furniture, and systems",
       desc: "Addressable smoke and heat detectors, automated sounder strobes, clean-agent FM-200 gas suppression for server rooms, smart lighting, and building automation controllers.",
       caps: [
         "Addressable Fire Panels",
@@ -398,6 +419,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "corporate-procurement": {
       category: "04 — Business & Capacity Building",
       title: "Corporate Procurement & Supply",
+      img: "images/office-furniture.jpeg",
+      imgAlt: "Jarecha Investments Ltd executive office furniture and corporate procurement",
       desc: "ZPPA-compliant direct institutional sourcing of OEM server hardware, genuine laptops, commercial displays, safety apparel (PPE), electrical components, and industrial machinery parts.",
       caps: [
         "ZPPA-compliant Supply Delivery",
@@ -411,6 +434,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "corporate-training": {
       category: "04 — Business & Capacity Building",
       title: "IT & Engineering Staff Capacity Building",
+      img: "images/office-furniture.jpeg",
+      imgAlt: "Jarecha Investments Ltd smart office training environment and furnishings",
       desc: "Tailored professional on-site workshops, cybersecurity hygiene, network administration essentials, workplace safety protocols, and operational management certification training.",
       caps: [
         "Hands-on Network Labs",
@@ -430,6 +455,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalCategory) modalCategory.textContent = data.category;
     if (modalTitle) modalTitle.textContent = data.title;
     if (modalDesc) modalDesc.textContent = data.desc;
+
+    if (modalImg) {
+      if (data.img) {
+        modalImg.src = data.img;
+        modalImg.alt = data.imgAlt || data.title;
+        modalImg.style.display = 'block';
+      } else {
+        modalImg.style.display = 'none';
+      }
+    }
 
     if (modalCaps) {
       modalCaps.innerHTML = '';

@@ -135,12 +135,44 @@ img {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.5rem;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   color: #ffffff;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.03);
+}
+
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .brand-logo-img {
+    height: 32px;
+    max-width: 105px;
+  }
 }
 
 .brand-dot {
@@ -820,13 +852,21 @@ section {
   width: 100%;
   height: 520px;
   object-fit: cover;
+  object-position: center 32%;
   display: block;
-  filter: brightness(0.88) contrast(1.06);
+  filter: brightness(0.92) contrast(1.04);
   transition: transform 0.6s var(--ease-out-expo);
 }
 
 .hero-image-card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .hero-image-card img {
+    height: 380px;
+    object-position: center 25%;
+  }
 }
 
 .hero-image-overlay {
@@ -2375,3 +2415,439 @@ section {
     animation: none !important;
   }
 }
+
+/* ==================================================
+   CLIENT IMAGE INTEGRATION & SHOWCASE STYLES
+   ================================================== */
+
+/* Service Image Wrapper with Secondary Thumbnail */
+.service-img-wrapper {
+  background: #071A2F;
+}
+
+.service-img-wrapper.has-secondary {
+  position: relative;
+}
+
+.service-secondary-thumb {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 175px;
+  height: 115px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+  background: var(--navy);
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-group-row.reverse .service-secondary-thumb {
+  right: auto;
+  left: 1.25rem;
+}
+
+.service-secondary-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+}
+
+.service-secondary-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-secondary-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(5, 6, 8, 0.88);
+  font-size: 0.625rem;
+  font-family: monospace;
+  color: var(--yellow);
+  text-transform: uppercase;
+  padding: 3px 6px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .service-secondary-thumb {
+    width: 135px;
+    height: 90px;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+  .service-group-row.reverse .service-secondary-thumb {
+    left: auto;
+    right: 0.75rem;
+  }
+}
+
+/* Corporate Fleet Card (Why Us / Operations) */
+.corporate-fleet-card {
+  background: #071A2F;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+}
+
+.fleet-img-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #050608;
+}
+
+.fleet-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.6s var(--ease-out-expo);
+  display: block;
+}
+
+.corporate-fleet-card:hover .fleet-main-img {
+  transform: scale(1.02);
+}
+
+.fleet-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 26, 47, 0.1) 0%, rgba(5, 6, 8, 0.8) 100%);
+  pointer-events: none;
+}
+
+.fleet-telemetry-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(5, 6, 8, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fleet-meta-bar {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #071A2F;
+}
+
+/* Corporate Showcase Card (About Us) */
+.corporate-showcase-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(7, 26, 47, 0.06);
+}
+
+.showcase-img-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #071A2F;
+}
+
+.showcase-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transition: transform 0.6s var(--ease-out-expo);
+  display: block;
+}
+
+.corporate-showcase-card:hover .showcase-main-img {
+  transform: scale(1.02);
+}
+
+.showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 26, 47, 0.05) 0%, rgba(7, 26, 47, 0.65) 100%);
+  pointer-events: none;
+}
+
+.showcase-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(7, 26, 47, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--yellow);
+}
+
+.showcase-caption {
+  padding: 1.75rem;
+  background: #ffffff;
+}
+
+/* Project Evidence Card (Authentic Operations & Project 1) */
+.project-evidence-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(7, 26, 47, 0.08);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .project-evidence-card {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.project-img-wrapper {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: #071A2F;
+}
+
+.project-evidence-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.project-evidence-card:hover .project-evidence-img {
+  transform: scale(1.02);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 26, 47, 0.05) 0%, rgba(7, 26, 47, 0.5) 100%);
+  pointer-events: none;
+}
+
+.project-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(7, 26, 47, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--yellow);
+}
+
+.project-evidence-info {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+/* Smart Office Solutions Showcase */
+.smart-office-showcase {
+  margin-top: 4.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.smart-office-header {
+  margin-bottom: 2rem;
+}
+
+.smart-office-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .smart-office-hero-grid {
+    grid-template-columns: 1.25fr 0.95fr;
+  }
+}
+
+.smart-office-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #071A2F;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.smart-office-item.primary {
+  height: 350px;
+}
+
+.smart-office-item.secondary {
+  height: 350px;
+}
+
+.smart-office-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.smart-office-item:hover img {
+  transform: scale(1.03);
+}
+
+.smart-office-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(5, 6, 8, 0.92) 100%);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.smart-office-tag span {
+  display: block;
+  font-size: 0.6875rem;
+  font-family: monospace;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.smart-office-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .smart-office-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.smart-office-gallery .smart-office-item {
+  height: 200px;
+}
+
+/* Branding Showcase Dual Grid */
+.branding-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .branding-showcase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.branding-showcase-item {
+  position: relative;
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #071A2F;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.branding-showcase-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.branding-showcase-item:hover img {
+  transform: scale(1.03);
+}
+
+.branding-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(5, 6, 8, 0.92) 100%);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.branding-tag span {
+  display: block;
+  font-size: 0.6875rem;
+  font-family: monospace;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+/* Service Detail Modal Image */
+.modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: rgba(5, 6, 8, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
