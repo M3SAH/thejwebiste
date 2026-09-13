@@ -68,38 +68,40 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
-    <a href="index.html#hero">Home</a>
-    <a href="about.html">About Jarecha</a>
-    <a href="services.html">Services & Capabilities</a>
-    <a href="index.html#why-us">Why Jarecha</a>
-    <a href="index.html#industries">Sectors & Industries</a>
-    <a href="index.html#clients">Client Portfolio</a>
-    <a href="index.html#compliance">Statutory Compliance</a>
-    <a href="contact.html">Contact & Consultations</a>
+    <a href="index.html#hero" class="mobile-nav-link active">Home</a>
+    <a href="about.html" class="mobile-nav-link">About Jarecha</a>
+    <a href="services.html" class="mobile-nav-link">Services & Capabilities</a>
+    <a href="index.html#why-us" class="mobile-nav-link">Why Jarecha</a>
+    <a href="index.html#industries" class="mobile-nav-link">Sectors & Industries</a>
+    <a href="index.html#clients" class="mobile-nav-link">Client Portfolio</a>
+    <a href="index.html#compliance" class="mobile-nav-link">Statutory Compliance</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & Consultations</a>
   </div>
 
   <main>
-    <!-- 1. HERO SECTION (BLACK / NAVY) -->
-    <section id="hero" class="hero-section">
+    <!-- 1. HERO SECTION (BLACK / NAVY) WITH ORCHESTRATED ENTRANCE SEQUENCE -->
+    <section id="hero" class="hero-section hero-loading" aria-label="Hero Overview">
+      <div class="hero-grid-overlay"></div>
       <div class="hero-glow"></div>
       <div class="container hero-grid">
         <div class="hero-text-content">
-          <div class="badge badge-yellow">
-            <span class="badge-dot"></span>
+          <div class="hero-seq-item hero-seq-badge badge badge-yellow">
+            <span class="badge-dot pulse-beacon"></span>
             <span>Jarecha Investments Limited</span>
+            <span class="hero-badge-tag">REP-ZMB</span>
           </div>
 
           <h1 class="hero-headline">
-            <span>Solutions That Move</span>
-            <span class="text-gradient">Business Forward.</span>
+            <span class="hero-seq-item hero-seq-headline-1">Solutions That Move</span>
+            <span class="hero-seq-item hero-seq-headline-2 text-gradient">Business Forward.</span>
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-seq-item hero-seq-desc hero-description">
             A trusted Zambian multi-disciplinary partner delivering integrated enterprise technology, heavy engineering infrastructure, intelligent surveillance systems, and corporate supply solutions.
           </p>
 
-          <div class="hero-ctas">
-            <a href="#services" class="btn btn-primary">
+          <div class="hero-seq-item hero-seq-ctas hero-ctas">
+            <a href="#services" class="btn btn-primary btn-shine">
               <span>Explore Our Services</span>
               <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -112,39 +114,49 @@
             </a>
           </div>
 
-          <div class="hero-stats">
+          <div class="hero-seq-item hero-seq-stats hero-stats">
             <div class="stat-item">
-              <div class="stat-num">10<span>+</span></div>
+              <div class="stat-num"><span class="stat-counter" data-target="10">0</span><span>+</span></div>
               <div class="stat-label">Years Field Capability</div>
             </div>
             <div class="stat-item">
-              <div class="stat-num">8<span>+</span></div>
+              <div class="stat-num"><span class="stat-counter" data-target="8">0</span><span>+</span></div>
               <div class="stat-label">Major Institutional Clients</div>
             </div>
             <div class="stat-item">
-              <div class="stat-num">100<span>%</span></div>
+              <div class="stat-num"><span class="stat-counter" data-target="100">0</span><span>%</span></div>
               <div class="stat-label">Zambian Owned & Compliant</div>
             </div>
           </div>
         </div>
 
-        <div class="hero-media-wrapper">
+        <div class="hero-media-wrapper hero-seq-item hero-seq-media">
           <div class="hero-image-card">
-            <img src="images/hero.jpg" alt="Jarecha high-tech engineering and infrastructure operations" />
+            <div class="hero-scanline"></div>
+            <img src="images/hero.jpg" alt="Jarecha high-tech engineering and infrastructure operations" class="hero-main-img" />
             <div class="hero-image-overlay"></div>
+            <div class="hero-corner-decorations">
+              <span class="corner tl"></span>
+              <span class="corner tr"></span>
+              <span class="corner bl"></span>
+              <span class="corner br"></span>
+            </div>
           </div>
 
           <!-- Telemetry Overlay Badge -->
-          <div class="telemetry-card">
+          <div class="telemetry-card hero-seq-item hero-seq-telemetry">
             <div class="telemetry-header">
               <div class="telemetry-live">
                 <span class="pulse-circle"></span>
                 <span>Operations Active</span>
               </div>
-              <span style="font-size:0.6875rem;font-family:monospace;color:#9AA4B2;">ZMB / LSK</span>
+              <span class="telemetry-loc-code">ZMB / LSK</span>
             </div>
             <div class="telemetry-content">EIZ & ZPPA Certified Delivery</div>
             <div class="telemetry-sub">Copperbelt, Lusaka & Nationwide Sites</div>
+            <div class="telemetry-meter">
+              <div class="telemetry-meter-bar"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -153,12 +165,12 @@
     <!-- 2. INTRO SECTION (LIGHT) -->
     <section id="intro" class="section-padding bg-light">
       <div class="container">
-        <div class="badge badge-navy">
+        <div class="badge badge-navy reveal-on-scroll">
           <span>Enterprise Perspective</span>
         </div>
 
         <div class="intro-grid">
-          <div>
+          <div class="reveal-on-scroll reveal-fade-left">
             <h2 class="heading-section text-navy">
               Single-Source Reliability For Complex Modern Operations.
             </h2>
@@ -177,7 +189,7 @@
             </a>
           </div>
 
-          <div class="intro-pillars">
+          <div class="intro-pillars stagger-group">
             <div class="pillar-card">
               <h3 class="pillar-title">
                 <span class="text-yellow">01.</span> Technology & Systems
@@ -212,18 +224,18 @@
     <!-- 3. SERVICES SECTION (NAVY) -->
     <section id="services" class="section-padding bg-navy">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Core Divisions</span>
         </div>
 
-        <h2 class="heading-section text-white" style="margin-bottom: 4rem;">
+        <h2 class="heading-section text-white reveal-on-scroll" style="margin-bottom: 4rem;">
           ENGINEERED CAPABILITIES<br />
           <span class="text-yellow">BUILT FOR SCALE.</span>
         </h2>
 
         <!-- DIVISION 01: Technology & Digital -->
-        <div class="service-group-row">
+        <div class="service-group-row reveal-on-scroll">
           <div>
             <div class="service-group-num">01</div>
             <h3 class="service-group-title">Technology & Digital Systems</h3>
@@ -257,7 +269,7 @@
         </div>
 
         <!-- DIVISION 02: Engineering & Infrastructure (Reversed layout) -->
-        <div class="service-group-row reverse">
+        <div class="service-group-row reverse reveal-on-scroll">
           <div>
             <div class="service-group-num">02</div>
             <h3 class="service-group-title">Engineering & Infrastructure</h3>
@@ -287,7 +299,7 @@
         </div>
 
         <!-- DIVISION 03: Security & Smart Office -->
-        <div class="service-group-row">
+        <div class="service-group-row reveal-on-scroll">
           <div>
             <div class="service-group-num">03</div>
             <h3 class="service-group-title">Security & Smart Office</h3>
@@ -317,7 +329,7 @@
         </div>
 
         <!-- DIVISION 04: Business & Capacity Building (Reversed layout) -->
-        <div class="service-group-row reverse">
+        <div class="service-group-row reverse reveal-on-scroll">
           <div>
             <div class="service-group-num">04</div>
             <h3 class="service-group-title">Business & Capacity Building</h3>
@@ -358,7 +370,7 @@
     <section class="section-padding bg-light">
       <div class="container">
         <div class="spotlight-grid">
-          <div>
+          <div class="reveal-on-scroll reveal-fade-left">
             <div class="badge badge-navy">
               <span>Engineering Execution</span>
             </div>
@@ -376,11 +388,11 @@
             </a>
           </div>
 
-          <div class="spotlight-card">
+          <div class="spotlight-card reveal-on-scroll reveal-fade-right">
             <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">
               Enterprise Quality Commitments
             </h3>
-            <div class="spotlight-features">
+            <div class="spotlight-features stagger-group">
               <div class="feat-box">
                 <div class="feat-box-title">EIZ Professional Practice</div>
                 <div class="feat-box-text">Engineered in compliance with Zambian electrical and civil regulations.</div>
@@ -406,19 +418,19 @@
     <!-- 5. WHY JARECHA (BLACK) -->
     <section id="why-us" class="section-padding bg-black">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Strategic Advantage</span>
         </div>
 
-        <h2 class="heading-section text-white">
+        <h2 class="heading-section text-white reveal-on-scroll">
           BUILT FOR REAL-WORLD NEEDS.
         </h2>
-        <p style="font-size: 1.1rem; color: var(--muted); max-width: 600px;">
+        <p class="reveal-on-scroll" style="font-size: 1.1rem; color: var(--muted); max-width: 600px;">
           Four foundational pillars that govern every engagement, quotation, project timeline, and field execution.
         </p>
 
-        <div class="principles-list">
+        <div class="principles-list stagger-group">
           <!-- 01 -->
           <div class="principle-row">
             <div class="principle-num">01</div>
@@ -461,20 +473,20 @@
     <!-- 6. INDUSTRIES SECTION (NAVY) -->
     <section id="industries" class="section-padding bg-navy">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Sectors Served</span>
         </div>
 
-        <h2 class="heading-section text-white">
+        <h2 class="heading-section text-white reveal-on-scroll">
           SUPPORTING ORGANIZATIONS<br />
           <span class="text-yellow">ACROSS MULTIPLE SECTORS.</span>
         </h2>
-        <p style="font-size: 1.05rem; color: var(--muted); max-width: 650px;">
+        <p class="reveal-on-scroll" style="font-size: 1.05rem; color: var(--muted); max-width: 650px;">
           Proven cross-sector expertise adapted to the specialized regulatory, security, and operational realities of Zambian industry.
         </p>
 
-        <div class="industries-list">
+        <div class="industries-list stagger-group">
           <div class="industry-item">
             <div class="industry-name">
               <span class="industry-num">01</span>
@@ -535,7 +547,7 @@
     <!-- 7. CLIENTS & PARTNERS (LIGHT) -->
     <section id="clients" class="section-padding bg-light">
       <div class="container">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
           <div class="badge badge-navy">
             <span>Portfolio & Institutional Trust</span>
           </div>
@@ -547,7 +559,7 @@
           </p>
         </div>
 
-        <div class="clients-grid">
+        <div class="clients-grid stagger-group">
           <!-- 1: Konkola Copper Mines -->
           <div class="client-card">
             <div class="client-header">
@@ -690,20 +702,20 @@
     <!-- 8. COMPLIANCE SECTION (NAVY) -->
     <section id="compliance" class="section-padding bg-navy">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Corporate Governance</span>
         </div>
 
-        <h2 class="heading-section text-white">
+        <h2 class="heading-section text-white reveal-on-scroll">
           PROFESSIONAL. COMPLIANT.<br />
           <span class="text-yellow">ACCOUNTABLE.</span>
         </h2>
-        <p style="font-size: 1.05rem; color: var(--muted); max-width: 650px;">
+        <p class="reveal-on-scroll" style="font-size: 1.05rem; color: var(--muted); max-width: 650px;">
           Fully certified by statutory and professional engineering regulatory authorities in the Republic of Zambia.
         </p>
 
-        <div class="compliance-grid">
+        <div class="compliance-grid stagger-group">
           <!-- PACRA -->
           <div class="compliance-card">
             <div class="compliance-icon">
@@ -804,7 +816,7 @@
     <!-- 9. FINAL CTA & CONTACT FORM (BLACK) -->
     <section id="contact" class="section-padding bg-black">
       <div class="container contact-grid">
-        <div>
+        <div class="reveal-on-scroll reveal-fade-left">
           <div class="badge badge-yellow">
             <span class="badge-dot"></span>
             <span>Direct Engagement</span>
@@ -873,16 +885,20 @@
                 </svg>
               </div>
               <div>
-                <div class="contact-info-label">Geographical Operations</div>
-                <div class="contact-info-val" style="font-size:0.95rem;">Lusaka, Copperbelt & Nationwide</div>
-                <div style="font-size:0.75rem;color:var(--muted);">On-site project execution capability</div>
+                <div class="contact-info-label">Head Office & Physical Location</div>
+                <div class="contact-info-val" style="font-size:0.92rem;color:#ffffff;line-height:1.45;">
+                  Plot No. 513 Kwacha Street, Behind Permanent House, Town Centre, Chingola, Zambia
+                </div>
+                <div style="font-size:0.75rem;color:var(--muted);margin-top:0.25rem;">
+                  Copperbelt Headquarters • Active deployments nationwide
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Right: Dark Navy Form with Inline Feedback -->
-        <div class="form-box">
+        <div class="form-box reveal-on-scroll reveal-fade-right">
           <div style="margin-bottom: 2rem;">
             <h3 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#ffffff;margin-bottom:0.5rem;">
               Request Consultation
@@ -1045,8 +1061,8 @@
               <a href="mailto:JarechaInvestments@gmail.com" style="color:#ffffff;word-break:break-all;">JarechaInvestments@gmail.com</a>
             </div>
             <div>
-              <span style="display:block;font-size:0.6875rem;text-transform:uppercase;color:rgba(255,255,255,0.4);">Operations Base</span>
-              <span style="color:#ffffff;">Lusaka, Copperbelt & Nationwide Sites, Zambia</span>
+              <span style="display:block;font-size:0.6875rem;text-transform:uppercase;color:rgba(255,255,255,0.4);">Head Office & Location</span>
+              <span style="color:#ffffff;line-height:1.45;display:block;">Plot No. 513 Kwacha Street, Behind Permanent House, Town Centre, Chingola, Zambia</span>
             </div>
           </div>
         </div>

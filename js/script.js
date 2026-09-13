@@ -4,6 +4,75 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Hero Entrance Sequence Orchestrator
+  const heroSection = document.getElementById('hero');
+  const statCounters = document.querySelectorAll('.stat-counter');
+
+  function animateHeroCounter(el, target, duration = 1400) {
+    let startTimestamp = null;
+    const startVal = 0;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // Smooth easeOutExpo curve for realistic deceleration
+      const easedProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.floor(easedProgress * (target - startVal) + startVal);
+      el.textContent = current.toString();
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toString();
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  function triggerHeroEntrance() {
+    if (!heroSection) return;
+
+    // Reset sequence classes to initial state
+    heroSection.classList.remove('hero-entered');
+    heroSection.classList.add('hero-loading');
+
+    // Reset counter numbers
+    statCounters.forEach((counter) => {
+      counter.textContent = '0';
+    });
+
+    // Reset telemetry meter bar width
+    const meterBar = heroSection.querySelector('.telemetry-meter-bar');
+    if (meterBar) {
+      meterBar.style.transition = 'none';
+      meterBar.style.width = '0%';
+    }
+
+    // Allow browser reflow before applying entered state
+    window.requestAnimationFrame(() => {
+      setTimeout(() => {
+        heroSection.classList.remove('hero-loading');
+        heroSection.classList.add('hero-entered');
+
+        if (meterBar) {
+          meterBar.style.transition = '';
+          meterBar.style.width = '';
+        }
+
+        // Stagger numerical counter launch with the stats section appearance
+        setTimeout(() => {
+          statCounters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+            animateHeroCounter(counter, target, 1500);
+          });
+        }, 850);
+      }, 50);
+    });
+  }
+
+  if (heroSection) {
+    // Initiate on page readiness
+    setTimeout(triggerHeroEntrance, 80);
+  }
+
   // 1. Scroll Progress Bar
   const progressBar = document.getElementById('scroll-progress');
   window.addEventListener('scroll', () => {
@@ -16,11 +85,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // 2. Navbar Scroll Style & Active Navigation Tracker
+  // 2. Navbar Scroll Style & Active Navigation Tracker (Desktop + Mobile)
   const navbar = document.querySelector('.navbar');
-  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileNavLinks = mobileDrawer ? mobileDrawer.querySelectorAll('a') : [];
 
+  // Determine current page filename (e.g. 'index.html', 'about.html', 'services.html', 'contact.html')
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const isHomePage = currentPath === 'index.html' || currentPath === '' || currentPath === '/';
+
+  function setActiveNav(targetKey, isSectionId = false) {
+    const isTargetMatch = (link) => {
+      const rawHref = link.getAttribute('href') || '';
+      if (!rawHref) return false;
+
+      if (isSectionId) {
+        // Match in-page section, e.g. targetKey = 'why-us' or 'hero'
+        if (rawHref === `#${targetKey}` || rawHref.endsWith(`#${targetKey}`)) return true;
+        if (link.dataset.target === targetKey) return true;
+
+        // Alias mappings for index.html
+        if ((targetKey === 'hero' || targetKey === 'intro') && (rawHref === 'index.html' || rawHref === 'index.html#hero' || rawHref === '#hero')) {
+          return true;
+        }
+        if (targetKey === 'services' && (rawHref === 'services.html' || rawHref === '#services' || rawHref.endsWith('#services'))) {
+          return true;
+        }
+        if (targetKey === 'contact' && (rawHref === 'contact.html' || rawHref === '#contact' || rawHref.endsWith('#contact'))) {
+          return true;
+        }
+        return false;
+      } else {
+        // Page match, e.g. targetKey = 'about.html'
+        const linkPage = rawHref.split('#')[0].split('/').pop();
+        if (linkPage === targetKey) return true;
+        if ((targetKey === 'index.html' || targetKey === '') && (linkPage === 'index.html' || linkPage === '')) return true;
+        return false;
+      }
+    };
+
+    navLinks.forEach((link) => {
+      if (isTargetMatch(link)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    mobileNavLinks.forEach((link) => {
+      if (isTargetMatch(link)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Set default active link based on page
+  if (!isHomePage) {
+    setActiveNav(currentPath, false);
+  } else {
+    setActiveNav('hero', true);
+  }
+
+  // Scroll spy for in-page sections
+  const spySections = document.querySelectorAll('section[id]');
   const handleNavScroll = () => {
     if (window.scrollY > 40) {
       navbar?.classList.add('scrolled');
@@ -28,22 +158,23 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar?.classList.remove('scrolled');
     }
 
-    // Scroll spy
-    const scrollPos = window.scrollY + 200;
-    sections.forEach((sec) => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      const id = sec.getAttribute('id');
-      if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach((link) => {
-          if (link.getAttribute('href') === `#${id}` || link.dataset.target === id) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
+    if (isHomePage && spySections.length > 0) {
+      const scrollPos = window.scrollY + 220;
+      let activeSectionId = null;
+
+      spySections.forEach((sec) => {
+        const top = sec.offsetTop;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+          activeSectionId = id;
+        }
+      });
+
+      if (activeSectionId) {
+        setActiveNav(activeSectionId, true);
       }
-    });
+    }
   };
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -51,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobile-toggle');
-  const mobileDrawer = document.getElementById('mobile-drawer');
 
   if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener('click', () => {
@@ -60,27 +190,54 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle.setAttribute('aria-expanded', isOpen.toString());
     });
 
-    // Close mobile drawer when clicking any link inside it
-    const drawerLinks = mobileDrawer.querySelectorAll('a');
-    drawerLinks.forEach((link) => {
+    // Close mobile drawer when clicking any link inside it and update active state
+    mobileNavLinks.forEach((link) => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+
+        const href = link.getAttribute('href') || '';
+        if (href.includes('#')) {
+          const hash = href.split('#')[1];
+          if (hash) {
+            setActiveNav(hash, true);
+          }
+        }
       });
     });
   }
 
-  // 4. Smooth Anchor Scrolling for Internal Links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  // 4. Smooth Anchor Scrolling with Sticky Header Offset
+  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href === '#' || href === '') return;
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        e.preventDefault();
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      if (!href || href === '#' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+
+      const pathPart = href.substring(0, hashIndex);
+      const hashPart = href.substring(hashIndex);
+
+      // Only handle in-page anchors on the current page
+      const isCurrentPageAnchor = !pathPart || pathPart === currentPath || (isHomePage && (pathPart === 'index.html' || pathPart === ''));
+      if (isCurrentPageAnchor && hashPart.length > 1) {
+        const targetElement = document.querySelector(hashPart);
+        if (targetElement) {
+          e.preventDefault();
+          const headerOffset = 70;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Sync active nav state immediately on click
+          const sectionId = hashPart.replace('#', '');
+          setActiveNav(sectionId, true);
+        }
       }
     });
   });
@@ -386,8 +543,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 8. Intersection Observer for Scroll Reveals
-  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  // 8. Intersection Observer for Scroll Reveals & Universal Stats Counters
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .stagger-group');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
@@ -397,13 +554,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach((el) => observer.observe(el));
   } else {
     revealElements.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // Universal Stats Counter Trigger on Viewport Entry (for counters outside Hero)
+  const nonHeroCounters = document.querySelectorAll('.stat-counter:not(#hero .stat-counter)');
+  if ('IntersectionObserver' in window && nonHeroCounters.length > 0) {
+    const counterObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target') || '0', 10);
+          animateHeroCounter(el, target, 1500);
+          obs.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    nonHeroCounters.forEach((counter) => counterObserver.observe(counter));
+  } else {
+    nonHeroCounters.forEach((counter) => {
+      const target = counter.getAttribute('data-target');
+      if (target) counter.textContent = target;
+    });
   }
 
   // 9. Pre-populate service dropdown if passed via URL parameter (?service=...)

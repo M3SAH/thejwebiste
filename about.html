@@ -56,29 +56,29 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Jarecha</a>
-    <a href="services.html">Services & Capabilities</a>
-    <a href="index.html#why-us">Why Jarecha</a>
-    <a href="index.html#industries">Sectors & Industries</a>
-    <a href="index.html#clients">Client Portfolio</a>
-    <a href="index.html#compliance">Statutory Compliance</a>
-    <a href="contact.html">Contact & Consultations</a>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link active">About Jarecha</a>
+    <a href="services.html" class="mobile-nav-link">Services & Capabilities</a>
+    <a href="index.html#why-us" class="mobile-nav-link">Why Jarecha</a>
+    <a href="index.html#industries" class="mobile-nav-link">Sectors & Industries</a>
+    <a href="index.html#clients" class="mobile-nav-link">Client Portfolio</a>
+    <a href="index.html#compliance" class="mobile-nav-link">Statutory Compliance</a>
+    <a href="contact.html" class="mobile-nav-link">Contact & Consultations</a>
   </div>
 
   <main style="padding-top: 5rem;">
     <!-- Page Hero Banner -->
     <section class="section-padding bg-black" style="padding-top: 6rem; padding-bottom: 5rem;">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Corporate Overview</span>
         </div>
-        <h1 class="heading-display text-white">
+        <h1 class="heading-display text-white reveal-on-scroll">
           A MULTI-DISCIPLINARY<br />
           <span class="text-yellow">ZAMBIAN ENTERPRISE.</span>
         </h1>
-        <p style="font-size: 1.25rem; color: var(--muted); max-width: 720px; line-height: 1.6;">
+        <p class="reveal-on-scroll" style="font-size: 1.25rem; color: var(--muted); max-width: 720px; line-height: 1.6;">
           Jarecha Investments Limited was founded to bridge the gap between engineering infrastructure and technological innovation, providing institutions across Zambia with single-source accountability.
         </p>
       </div>
@@ -88,7 +88,7 @@
     <section class="section-padding bg-light">
       <div class="container">
         <div class="intro-grid">
-          <div>
+          <div class="reveal-on-scroll reveal-fade-left">
             <h2 class="heading-section text-navy">
               BUILT ON INTEGRITY, RIGOR, AND NATIONWIDE CAPACITY.
             </h2>
@@ -100,7 +100,7 @@
             </p>
           </div>
 
-          <div class="intro-pillars">
+          <div class="intro-pillars stagger-group">
             <div class="pillar-card">
               <h3 class="pillar-title"><span class="text-yellow">01.</span> Vision</h3>
               <p class="pillar-desc">To be Zambia’s premier integrated infrastructure and technology partner, recognized for technical excellence and uncompromising reliability.</p>
@@ -115,24 +115,44 @@
             </div>
           </div>
         </div>
+
+        <!-- Telemetry & Operational Metrics -->
+        <div class="about-stats-ribbon stagger-group">
+          <div class="about-stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="10">0</span><span>+</span></div>
+            <div class="stat-label">Years Field Capability</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="4">0</span></div>
+            <div class="stat-label">Specialized Core Divisions</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="8">0</span><span>+</span></div>
+            <div class="stat-label">Tier-1 Institutional Clients</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="100">0</span><span>%</span></div>
+            <div class="stat-label">Zambian Owned & EIZ Compliant</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Operational Standards (Navy) -->
     <section class="section-padding bg-navy">
       <div class="container">
-        <div class="badge badge-yellow">
+        <div class="badge badge-yellow reveal-on-scroll">
           <span class="badge-dot"></span>
           <span>Quality & Compliance</span>
         </div>
-        <h2 class="heading-section text-white">
+        <h2 class="heading-section text-white reveal-on-scroll">
           CERTIFIED STATUTORY COMPLIANCE
         </h2>
-        <p style="font-size: 1.05rem; color: var(--muted); max-width: 650px; margin-bottom: 3rem;">
+        <p class="reveal-on-scroll" style="font-size: 1.05rem; color: var(--muted); max-width: 650px; margin-bottom: 3rem;">
           Our licenses, registrations, and regulatory standing ensure zero risk for corporate and government procurement committees.
         </p>
 
-        <div class="compliance-grid">
+        <div class="compliance-grid stagger-group">
           <div class="compliance-card">
             <div class="compliance-title">EIZ Registration</div>
             <div class="compliance-meta">Engineering Council of Zambia</div>
@@ -155,7 +175,7 @@
     <!-- Clients & Partners Showcase (Light) -->
     <section class="section-padding bg-light">
       <div class="container">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
           <div class="badge badge-navy">
             <span>Institutional Portfolio</span>
           </div>
@@ -167,7 +187,7 @@
           </p>
         </div>
 
-        <div class="clients-grid">
+        <div class="clients-grid stagger-group">
           <!-- 1: Konkola Copper Mines -->
           <div class="client-card">
             <div class="client-header">
@@ -309,7 +329,7 @@
 
     <!-- Call to action (Black) -->
     <section class="section-padding bg-black" style="text-align: center;">
-      <div class="container" style="max-width: 700px;">
+      <div class="container reveal-on-scroll" style="max-width: 700px;">
         <h2 class="heading-section text-white">
           READY TO WORK WITH JARECHA?
         </h2>
@@ -331,7 +351,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <div>© 2026 Jarecha Investments Limited. All Rights Reserved. Republic of Zambia.</div>
+        <div>© 2026 Jarecha Investments Limited. Plot No. 513 Kwacha Street, Behind Permanent House, Town Centre, Chingola, Zambia.</div>
         <a href="index.html" style="color:var(--yellow);font-weight:700;">Back to Home →</a>
       </div>
     </div>
